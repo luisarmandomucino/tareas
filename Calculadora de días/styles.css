@@ -1,9 +1,20 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0; /* Ajusta el color de fondo según tus preferencias */
+}
+
+.main-container {
+    text-align: center;
+}
 
 .container {
     display: inline-block;
     flex-direction: row;
     align-items: center;
-    
     gap: 10px;
 }
 
@@ -11,24 +22,26 @@
     width: 50px; /* Ajusta el ancho según tus preferencias */
 }
 
-
 .container input::placeholder {
     position: absolute;
-    top: 50%; 
+    top: 50%;
     left: 0;
-    transform: translateY(-50%); 
-    text-align: center; 
+    transform: translateY(-50%);
+    text-align: center;
     width: 100%;
-    font-style: italic; 
-    color: gray; 
+    font-style: italic;
+    color: gray;
 }
 
 #calcular {
     clear: both;
     display: block;
-    margin-top: 10px; 
+    margin-top: 10px;
     background-color: aqua;
 }
+
+
+
 
 
 
