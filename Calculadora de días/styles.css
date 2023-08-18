@@ -1,44 +1,35 @@
 body {
     margin: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh;
     background-color: #f0f0f0; /* Ajusta el color de fondo según tus preferencias */
 }
 
-.main-container {
-    text-align: center;
-}
-
 .container {
-    display: inline-block;
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
+    margin-top: 10px;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .input {
     width: 50px; /* Ajusta el ancho según tus preferencias */
 }
 
-.container input::placeholder {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    text-align: center;
-    width: 100%;
-    font-style: italic;
-    color: gray;
+#calcular {
+    margin-top: 10px;
 }
 
-#calcular {
-    clear: both;
-    display: block;
-    margin-top: 10px;
-    background-color: aqua;
-}
 
 
 

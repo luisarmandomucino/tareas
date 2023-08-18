@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora de días laborales</title>
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="./styles.css">   
+    <link rel="stylesheet" href="./styles.css">
+    
+   
 </head>
 <body>
         <div class="container">
@@ -22,11 +24,12 @@
             <label for="anio" class="form-label"></label>
             <input type="number" class="input" id="anio" placeholder="YYYY" min="1900" required>
         </div> 
-          
+        <div>  
           <button type="button" class="btn btn-primary" id="calcular">Calcular</button>
-        
+        </div>
         <div id="resultado"> </div>
-
-    <script src="./script.js"></script>    
+        
+    <script src="./script.js"></script> 
+    <audio id="audioLunes" src="/lunes.wav" preload="auto"></audio>   
 </body>
 </html>

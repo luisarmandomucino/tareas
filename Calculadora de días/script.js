@@ -36,6 +36,11 @@ function calcularDia() {
     
 
     document.getElementById('resultado').textContent = resultado;
+
+    if (diaSemana === 1) {
+        const audioElement = document.getElementById('audioLunes');
+        audioElement.play();
+    }
 }
 
 document.getElementById('calcular').addEventListener('click', calcularDia);
