@@ -1,46 +1,31 @@
-function calcularDia() {
-    const dia = parseInt(document.getElementById('dia').value);
-    const mes = parseInt(document.getElementById('mes').value);
-    const anio = parseInt(document.getElementById('anio').value);
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("formFecha");
+    const fechaCalculada = document.getElementById("fechaCalculada");
 
-    const fecha = new Date(anio, mes - 1, dia);
-    const diaSemana = fecha.getDay(); 
-    let resultado = '';
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    switch (diaSemana) {
-        case 0:
-            resultado = 'Domingo (No laboral)';
-            break;
-        case 1:
-            resultado = 'Lunes (Día laboral)';
-            break;
-        case 2:
-            resultado = 'Martes (Día laboral)';
-            break;
-        case 3:
-            resultado = 'Miércoles (Día laboral)';
-            break;
-        case 4:
-            resultado = 'Jueves (Día laboral)';
-            break;
-        case 5:
-            resultado = 'Viernes (Día laboral)';
-            break;
-        case 6:
-            resultado = 'Sábado (No laboral)';
-            break;
-        default:
-            resultado = 'Fecha inválida';
-            break;
-    }
-    
+        const year = parseInt(document.getElementById("year").value);
+        const month = parseInt(document.getElementById("month").value) - 1; 
+        const day = parseInt(document.getElementById("day").value);
 
-    document.getElementById('resultado').textContent = resultado;
+        const inputDate = new Date(year, month, day);
+        const dayOfWeek = inputDate.getUTCDay(); 
 
-    if (diaSemana === 1) {
-        const audioElement = document.getElementById('audioLunes');
-        audioElement.play();
-    }
-}
+        const options = { weekday: 'long' };
+        const dayOfWeekString = new Intl.DateTimeFormat('es-ES', options).format(inputDate);
 
-document.getElementById('calcular').addEventListener('click', calcularDia);
+        let laborable;
+        switch (dayOfWeek) {
+            case 0:
+            case 6:
+                laborable = "No laborable";
+                break;
+            default:
+                laborable = "Lamentablemente laborable";
+        }
+
+        fechaCalculada.textContent = `El día ${day}/${month + 1}/${year} es un ${dayOfWeekString} y es ${laborable}.`;
+    });
+});
+
